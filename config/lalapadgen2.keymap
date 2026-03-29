@@ -57,6 +57,16 @@
             bindings = <&kp TAB>;
             key-positions = <10 11>;
         };
+
+        left_p {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <12 13>;
+        };
+
+        right_p {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <13 14>;
+        };
     };
 
     keymap {
