@@ -89,6 +89,15 @@
         };
     };
 
+    macros {
+        mission: mission {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(UP)>;
+            label = "MISSION";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
