@@ -7,6 +7,6 @@ include:
     shield: lalapadgen2_left rgbled_adapter
   - board: seeeduino_xiao_ble
     shield: settings_reset
-  - board: xiao_ble/nrf52840
+  - board: seeeduino_xiao_ble        # ← xiao_ble/nrf52840 から変更
     shield: prospector_scanner
     artifact-name: prospector_scanner
