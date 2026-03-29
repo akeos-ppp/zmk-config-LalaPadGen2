@@ -93,7 +93,7 @@
         mission: mission {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(UP)>;
+            bindings = <&kp LC(UP)>;
             label = "MISSION";
         };
     };
