@@ -67,6 +67,11 @@
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <13 14>;
         };
+
+        l_d {
+            bindings = <&kp LA(LC(D))>;
+            key-positions = <20 21>;
+        };
     };
 
     keymap {
