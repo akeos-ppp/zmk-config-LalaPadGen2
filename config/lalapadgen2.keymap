@@ -129,7 +129,7 @@
 &kp LCTRL &kp LALT &kp RS(LEFT_GUI) &mo 2 &lt 2 SPACE   &kp BACKSPACE &mt RIGHT_COMMAND CAPS &lt 1 ENTER &mo 1 &kp SINGLE_QUOTE
 &kp SEMI &kp EQUAL &none &kp RIGHT &kp DOWN   &kp LEFT &kp UP &kp UP &kp LEFT &kp DOWN
 &kp RIGHT &none &mkp LCLK &mkp RCLK &launch   &mkp LCLK &mkp RCLK &launch &mkp MB4 &mkp MB5
-&mission &mission &kp RIGHT_GUI &mkp MB4 &mkp MB5   &mission &mission &kp LEFT_GUI &tab_next &tab_prev
+&tab_prev &tab_next &kp RIGHT_GUI &mkp MB4 &mkp MB5   &mission &mission &kp LEFT_GUI &trans &trans
             >;
         };
 
