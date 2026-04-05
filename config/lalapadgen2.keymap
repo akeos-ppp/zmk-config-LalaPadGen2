@@ -90,12 +90,12 @@
 
         cap_1 {
             bindings = <&kp LS(LG(NUMBER_4))>;
-            key-positions = <15 16>;
+            key-positions = <40 41>;
         };
 
         cap_f {
             bindings = <&kp LS(LG(NUMBER_3))>;
-            key-positions = <25 26>;
+            key-positions = <39 40>;
         };
     };
 
