@@ -41,7 +41,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "td_mo12";
             #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 2>;
+            bindings = <&mo 2>, <&mo 3>;
         };
     };
 
@@ -127,6 +127,22 @@
             bindings = <&kp LS(LC(TAB))>;
             label = "TAB_PREV";
         };
+
+        win_layer: win_ly {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1>, <&macro_wait_time 200>, <&to 1>;
+
+            label = "WIN_LY";
+        };
+
+        mac_layer: mac_layer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0>, <&macro_wait_time 200>, <&to 0>;
+
+            label = "MAC_LAYER";
+        };
     };
 
     keymap {
@@ -135,13 +151,26 @@
         MAC_LAYER {
             display-name = "Default";
             bindings = <
-&kp Q              &kp W      &kp E             &kp R        &kp T                                               &kp Y         &kp U        &kp I             &kp O       &kp P
-&kp A              &kp S      &kp D             &kp F        &kp G                                               &kp H         &kp J        &kp K             &kp L       &kp MINUS
-&mt2 LEFT_SHIFT Z  &kp X      &kp C             &kp V        &kp B                                               &kp N         &kp M        &kp COMMA         &kp PERIOD  &mt RIGHT_SHIFT SLASH
-&kp LCTRL          &kp LALT   &kp RS(LEFT_GUI)  &lt 2 SPACE  &lt 2 SPACE  &kp BACKSPACE  &mt RIGHT_COMMAND CAPS  &lt 1 ENTER   &lt 1 ENTER  &kp SINGLE_QUOTE  &kp SEMI    &kp EQUAL
-                   &none      &kp RIGHT         &kp DOWN     &kp LEFT     &kp UP         &kp RG(F2)              &kp RG(LEFT)  &kp LG(F1)   &kp RG(RIGHT)     &none
-&mkp LCLK          &mkp RCLK  &launch                                                                                                       &mkp LCLK         &mkp RCLK   &launch
-&mkp MB4           &mkp MB5   &tab_prev         &tab_next    &mkp MB5                                            &mkp MB4      &mkp MB5     &mission          &mission    &mkp MB5
+&kp Q              &kp W       &kp E             &kp R        &kp T                                               &kp Y         &kp U        &kp I             &kp O       &kp P
+&kp A              &kp S       &kp D             &kp F        &kp G                                               &kp H         &kp J        &kp K             &kp L       &kp MINUS
+&mt2 LEFT_SHIFT Z  &kp X       &kp C             &kp V        &kp B                                               &kp N         &kp M        &kp COMMA         &kp PERIOD  &mt RIGHT_SHIFT SLASH
+&kp LCTRL          &kp LALT    &kp RS(LEFT_GUI)  &lt 3 SPACE  &lt 3 SPACE  &kp BACKSPACE  &mt RIGHT_COMMAND CAPS  &lt 2 ENTER   &lt 2 ENTER  &kp SINGLE_QUOTE  &kp SEMI    &kp EQUAL
+                   &mac_layer  &kp RIGHT         &kp DOWN     &kp LEFT     &kp UP         &kp RG(F2)              &kp RG(LEFT)  &kp LG(F1)   &kp RG(RIGHT)     &win_layer
+&mkp LCLK          &mkp RCLK   &launch                                                                                                       &mkp LCLK         &mkp RCLK   &launch
+&mkp MB4           &mkp MB5    &tab_prev         &tab_next    &mkp MB5                                            &mkp MB4      &mkp MB5     &mission          &mission    &mkp MB5
+            >;
+        };
+
+        WIN_LAYER {
+            display-name = "Win";
+            bindings = <
+&kp Q              &kp W      &kp E           &kp R        &kp T                                        &kp Y         &kp U        &kp I             &kp O       &kp P
+&kp A              &kp S      &kp D           &kp F        &kp G                                        &kp H         &kp J        &kp K             &kp L       &kp MINUS
+&mt2 LEFT_SHIFT Z  &kp X      &kp C           &kp V        &kp B                                        &kp N         &kp M        &kp COMMA         &kp PERIOD  &mt RIGHT_SHIFT SLASH
+&kp LEFT_WIN       &kp LALT   &kp LANGUAGE_2  &lt 3 SPACE  &lt 3 SPACE  &kp BACKSPACE  &mt RCTRL LANG1  &lt 2 ENTER   &lt 2 ENTER  &kp SINGLE_QUOTE  &kp SEMI    &kp EQUAL
+                   &none      &kp RIGHT       &kp DOWN     &kp LEFT     &kp UP         &kp RG(F2)       &kp RG(LEFT)  &kp LG(F1)   &kp RG(RIGHT)     &none
+&mkp LCLK          &mkp RCLK  &mkp MCLK                                                                                            &mkp LCLK         &mkp RCLK   &mkp MCLK
+&mkp MB4           &mkp MB5   &kp RG(TAB)     &kp RG(D)    &kp LCTRL                                    &mkp MB4      &mkp MB5     &kp RG(TAB)       &kp RG(D)   &kp LCTRL
             >;
         };
 
@@ -183,27 +212,14 @@
 &trans   &trans   &trans   &trans   &trans                   &trans                         &trans                         &trans                         &trans                         &trans
             >;
         };
-
-        WIN_LAYER {
-            display-name = "Win";
-            bindings = <
-&kp Q              &kp W      &kp E           &kp R        &kp T                                        &kp Y         &kp U        &kp I             &kp O       &kp P
-&kp A              &kp S      &kp D           &kp F        &kp G                                        &kp H         &kp J        &kp K             &kp L       &kp MINUS
-&mt2 LEFT_SHIFT Z  &kp X      &kp C           &kp V        &kp B                                        &kp N         &kp M        &kp COMMA         &kp PERIOD  &mt RIGHT_SHIFT SLASH
-&kp LEFT_WIN       &kp LALT   &kp LANGUAGE_2  &lt 2 SPACE  &lt 2 SPACE  &kp BACKSPACE  &mt RCTRL LANG1  &lt 1 ENTER   &lt 1 ENTER  &kp SINGLE_QUOTE  &kp SEMI    &kp EQUAL
-                   &none      &kp RIGHT       &kp DOWN     &kp LEFT     &kp UP         &kp RG(F2)       &kp RG(LEFT)  &kp LG(F1)   &kp RG(RIGHT)     &none
-&mkp LCLK          &mkp RCLK  &mkp MCLK                                                                                            &mkp LCLK         &mkp RCLK   &mkp MCLK
-&mkp MB4           &mkp MB5   &kp RG(TAB)     &kp RG(D)    &kp LCTRL                                    &mkp MB4      &mkp MB5     &kp RG(TAB)       &kp RG(D)   &kp LCTRL
-            >;
-        };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
         Cond_Syslayer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
     };
 };
