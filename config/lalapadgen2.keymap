@@ -192,8 +192,8 @@
 &mt2 LEFT_SHIFT Z  &kp X      &kp C               &kp V        &kp B                                        &kp N         &kp M        &kp COMMA         &kp PERIOD  &mt RIGHT_SHIFT SLASH
 &kp LEFT_WIN       &kp LALT   &kp RS(LANGUAGE_2)  &lt 2 SPACE  &lt 2 SPACE  &kp BACKSPACE  &mt RCTRL LANG1  &lt 1 ENTER   &lt 1 ENTER  &kp SINGLE_QUOTE  &kp SEMI    &kp EQUAL
                    &none      &kp RIGHT           &kp DOWN     &kp LEFT     &kp UP         &kp RG(F2)       &kp RG(LEFT)  &kp LG(F1)   &kp RG(RIGHT)     &none
-&mkp LCLK          &mkp RCLK  &launch                                                                                                  &mkp LCLK         &mkp RCLK   &launch
-&mkp MB4           &mkp MB5   &tab_prev           &tab_next    &mkp MB5                                     &mkp MB4      &mkp MB5     &mission          &mission    &mkp MB5
+&mkp LCLK          &mkp RCLK  &mkp MCLK                                                                                                &mkp LCLK         &mkp RCLK   &mkp MCLK
+&mkp MB4           &mkp MB5   &tab_prev           &tab_next    &kp LCTRL                                    &mkp MB4      &mkp MB5     &mission          &mission    &kp LCTRL
             >;
         };
     };
