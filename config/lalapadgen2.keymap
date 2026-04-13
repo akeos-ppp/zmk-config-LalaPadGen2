@@ -97,6 +97,16 @@
             bindings = <&kp LS(LG(NUMBER_3))>;
             key-positions = <39 40>;
         };
+
+        system {
+            bindings = <&tog 4>;
+            key-positions = <41 40 39>;
+        };
+
+        re_system {
+            bindings = <&tog 0>;
+            key-positions = <30 31 32>;
+        };
     };
 
     macros {
