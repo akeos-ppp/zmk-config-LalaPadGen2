@@ -16,7 +16,7 @@
 &lt { quick-tap-ms = <200>; };
 
 / {
-     behaviors {
+    behaviors {
         zip_dyn_scale: zip_dyn_scale {
             compatible = "zmk,behavior-zip-dynamic-scale";
             #binding-cells = <2>;
@@ -45,10 +45,12 @@
         };
 
         // ↓↓↓ 追加: behaviors ブロックに正しく配置 ↓↓↓
+
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             bindings = <&mo>, <&to_layer_0>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -57,6 +59,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
             tap-ms = <20>;
         };
 
@@ -73,6 +76,7 @@
             display-name = "Toggle Layer Off";
             toggle-mode = "off";
         };
+
         // ↑↑↑ 追加ここまで ↑↑↑
     };
 
@@ -173,6 +177,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 1>, <&macro_wait_time 200>, <&to 1>;
+
             label = "WIN_LY";
         };
 
@@ -180,16 +185,19 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 0>, <&macro_wait_time 200>, <&to 0>;
+
             label = "MAC_LAYER";
         };
 
         // ↓↓↓ 追加: lt_to_layer_0 が参照する to_layer_0 の実体 ↓↓↓
+
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to 0>;
             label = "TO_LAYER_0";
         };
+
         // ↑↑↑ 追加ここまで ↑↑↑
     };
 
@@ -212,13 +220,13 @@
         WIN_LAYER {
             display-name = "Win";
             bindings = <
-&kp Q              &kp W      &kp E           &kp R        &kp T                                        &kp Y         &kp U        &kp I             &kp O       &kp P
-&kp A              &kp S      &kp D           &kp F        &kp G                                        &kp H         &kp J        &kp K             &kp L       &kp MINUS
-&mt2 LEFT_SHIFT Z  &kp X      &kp C           &kp V        &kp B                                        &kp N         &kp M        &kp COMMA         &kp PERIOD  &mt RIGHT_SHIFT SLASH
-&kp LEFT_WIN       &kp LALT   &kp LANGUAGE_2  &lt 3 SPACE  &lt 3 SPACE  &kp BACKSPACE  &mt RCTRL LANG1  &lt 2 ENTER   &lt 2 ENTER  &kp SINGLE_QUOTE  &kp SEMI    &kp EQUAL
-                   &none      &kp RIGHT       &kp DOWN     &kp LEFT     &kp UP         &kp RG(F2)       &kp RG(LEFT)  &kp LG(F1)   &kp RG(RIGHT)     &none
-&mkp LCLK          &mkp RCLK  &mkp MCLK                                                                                            &mkp LCLK         &mkp RCLK   &mkp MCLK
-&mkp MB4           &mkp MB5   &kp RG(TAB)     &kp RG(D)    &kp LCTRL                                    &mkp MB4      &mkp MB5     &kp RG(TAB)       &kp RG(D)   &kp LCTRL
+&kp Q              &kp W       &kp E           &kp R        &kp T                                        &kp Y         &kp U        &kp I             &kp O       &kp P
+&kp A              &kp S       &kp D           &kp F        &kp G                                        &kp H         &kp J        &kp K             &kp L       &kp MINUS
+&mt2 LEFT_SHIFT Z  &kp X       &kp C           &kp V        &kp B                                        &kp N         &kp M        &kp COMMA         &kp PERIOD  &mt RIGHT_SHIFT SLASH
+&kp LEFT_WIN       &kp LALT    &kp LANGUAGE_2  &lt 3 SPACE  &lt 3 SPACE  &kp BACKSPACE  &mt RCTRL LANG1  &lt 2 ENTER   &lt 2 ENTER  &kp SINGLE_QUOTE  &kp SEMI    &kp EQUAL
+                   &mac_layer  &kp RIGHT       &kp DOWN     &kp LEFT     &kp UP         &kp RG(F2)       &kp RG(LEFT)  &kp LG(F1)   &kp RG(RIGHT)     &win_layer
+&mkp LCLK          &mkp RCLK   &mkp MCLK                                                                                            &mkp LCLK         &mkp RCLK   &mkp MCLK
+&mkp MB4           &mkp MB5    &kp RG(TAB)     &kp RG(D)    &kp LCTRL                                    &mkp MB4      &mkp MB5     &kp RG(TAB)       &kp RG(D)   &kp LCTRL
             >;
         };
 
