@@ -142,6 +142,11 @@
             bindings = <&tog 0>;
             key-positions = <30 31 32>;
         };
+
+        r_d2 {
+            bindings = <&kp LA(LC(T))>;
+            key-positions = <31 32>;
+        };
     };
 
     macros {
