@@ -1,3 +1,4 @@
+#include <scroll-snap.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/zmk/input_transform.h>
@@ -162,14 +163,16 @@
                            <&zip_xy_scaler 1 5>,
                            <&zip_scroll_scaler 1 12>,
                            <&zip_dynamic_xy_scaler>,
-                           <&zip_dynamic_scroll_scaler>;
+                           <&zip_dynamic_scroll_scaler>,
+                                   <&zip_scroll_snap>;
         lowspeedmode {
             layers = <1>,<2>;
             input-processors =  <&trackpad_key_behaviors_R>,
                                 <&zip_xy_scaler 1 15>,
                                 <&zip_scroll_scaler 1 40>,
                                 <&zip_dynamic_xy_scaler>,
-                                <&zip_dynamic_scroll_scaler>;
+                                <&zip_dynamic_scroll_scaler>,
+                                   <&zip_scroll_snap>;
         };
     };
     trackpad_listener_L: trackpad_listener_L {
@@ -180,14 +183,16 @@
                            <&zip_xy_scaler 1 5>,
                            <&zip_scroll_scaler 1 12>,
                            <&zip_dynamic_xy_scaler>,
-                           <&zip_dynamic_scroll_scaler>;
+                           <&zip_dynamic_scroll_scaler>,
+                                   <&zip_scroll_snap>;
         lowspeedmode {
             layers = <1>,<2>;
             input-processors =  <&trackpad_key_behaviors_L>,
                                 <&zip_xy_scaler 1 15>,
                                 <&zip_scroll_scaler 1 40>,
                                 <&zip_dynamic_xy_scaler>,
-                                <&zip_dynamic_scroll_scaler>;
+                                <&zip_dynamic_scroll_scaler>,
+                                   <&zip_scroll_snap>;
         };
     };
 
