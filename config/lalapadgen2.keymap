@@ -94,12 +94,12 @@
         };
 
         left_p {
-            bindings = <&kp LEFT_PARENTHESIS>;
+            bindings = <&kakko>;
             key-positions = <12 13>;
         };
 
         right_p {
-            bindings = <&kp RIGHT_PARENTHESIS>;
+            bindings = <&daikakko>;
             key-positions = <13 14>;
         };
 
@@ -201,6 +201,20 @@
             #binding-cells = <0>;
             bindings = <&to 0>;
             label = "TO_LAYER_0";
+        };
+
+        kakko: kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
+            label = "KAKKO";
+        };
+
+        daikakko: daikakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+            label = "DAIKAKKO";
         };
 
         // ↑↑↑ 追加ここまで ↑↑↑
