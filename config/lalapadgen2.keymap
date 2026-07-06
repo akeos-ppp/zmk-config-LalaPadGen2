@@ -1,11 +1,11 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/zip_dynamic_scale.h>
+#include <scroll-snap.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <scroll-snap.dtsi>
 
 #define DEFAULT_LAYER 0
 #define SECONDARY_LAYER 1
@@ -95,12 +95,12 @@
         };
 
         left_p {
-            bindings = <&kp LEFT_PARENTHESIS>;
+            bindings = <&kakko>;
             key-positions = <12 13>;
         };
 
         right_p {
-            bindings = <&kp RIGHT_PARENTHESIS>;
+            bindings = <&daikakko>;
             key-positions = <13 14>;
         };
 
@@ -202,6 +202,27 @@
             #binding-cells = <0>;
             bindings = <&to 0>;
             label = "TO_LAYER_0";
+        };
+
+        kakko: kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
+            label = "KAKKO";
+        };
+
+        daikakko: daikakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+            label = "DAIKAKKO";
+        };
+
+        nami_kakko: nami_kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
+            label = "NAMI_KAKKO";
         };
 
         // ↑↑↑ 追加ここまで ↑↑↑
