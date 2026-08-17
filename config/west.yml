@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: ShiniNet
       url-base: https://github.com/ShiniNet/
+    - name: akeos-ppp
+      url-base: https://github.com/akeos-ppp
     - name: caksoylar
       url-base: https://github.com/caksoylar
     - name: prospector
@@ -13,9 +15,11 @@ manifest:
       remote: zmkfirmware
       revision: v0.3.0
       import: app/west.yml
+    # Tap/hold fixes live on this branch of the akeos-ppp fork.
+    # Switch remote/revision back to ShiniNet/main to return to upstream.
     - name: zmk-driver-iqs9151
-      remote: ShiniNet
-      revision: main
+      remote: akeos-ppp
+      revision: fix/tap-hold-bugs
     - name: zmk-easy-charge-indicator
       remote: ShiniNet
       revision: main
